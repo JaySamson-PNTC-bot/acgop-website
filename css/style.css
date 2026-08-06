@@ -103,16 +103,6 @@ a{text-decoration:none;color:inherit}
 .g-item img{width:100%;height:100%;object-fit:cover;transition:.4s}
 .g-item:hover img{transform:scale(1.05)}
 
-/* Who we are */
-.whoweare{padding:76px 0}
-.whoweare-desc{text-align:center;color:#717488;max-width:580px;margin:0 auto 46px;font-family:'Urbanist'}
-.school-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:36px}
-.school{text-align:center}
-.school-logo{background:#fff;border-radius:6px;aspect-ratio:1.3;display:flex;align-items:center;justify-content:center;padding:22px;margin-bottom:14px;box-shadow:0 2px 12px rgba(0,0,0,.05)}
-.school-logo img{max-height:100%;width:auto;object-fit:contain}
-.school h5{font-family:'Urbanist';font-weight:700;font-size:20px;color:#39364F;margin-bottom:4px}
-.school p{font-family:'Urbanist';color:#717488;font-size:15px}
-
 /* Benefits */
 .benefits{background:var(--mint);padding:76px 0}
 .benefits-inner{display:grid;grid-template-columns:1fr 1.1fr;gap:60px;align-items:center}
