@@ -1,0 +1,55 @@
+# Netlify Configuration for ACGO Website
+
+[build]
+  # No build command needed for static site
+  command = ""
+  publish = "/"
+
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+
+# Cache headers for performance
+[[headers]]
+  for = "/*"
+  [headers.values]
+    Cache-Control = "public, max-age=3600"
+    X-Content-Type-Options = "nosniff"
+    X-Frame-Options = "SAMEORIGIN"
+    X-XSS-Protection = "1; mode=block"
+
+# Specific cache for index.html (no cache to always get latest)
+[[headers]]
+  for = "/index.html"
+  [headers.values]
+    Cache-Control = "no-cache"
+
+# Performance settings
+[build.environment]
+  NODE_ENV = "production"
+
+# Preload fonts and critical resources
+[[headers]]
+  for = "/"
+  [headers.values]
+    Link = "</assets/fonts.css>; rel=preload; as=style"
+
+# Enable compression
+[build.processing]
+  skip_processing = false
+
+[build.processing.css]
+  bundle = true
+  minify = true
+
+[build.processing.js]
+  bundle = true
+  minify = true
+
+[build.processing.html]
+  pretty_urls = true
+
+# Form handling (if using Netlify Forms)
+[functions]
+  directory = "functions"
